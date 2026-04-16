@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "cd admin && npm install && npm run build && cd ../server && npm install",
-    "start": "cd server && node src/index.js",
+    "start": "cd server && node src/migrate.js && node src/index.js",
     "migrate": "cd server && node src/migrate.js",
     "seed": "cd server && node src/seed.js"
   },
