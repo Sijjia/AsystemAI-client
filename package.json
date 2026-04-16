@@ -1,0 +1,14 @@
+{
+  "name": "asystemai-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd admin && npm ci && npm run build && cd ../server && npm ci",
+    "start": "cd server && node src/index.js",
+    "migrate": "cd server && node src/migrate.js",
+    "seed": "cd server && node src/seed.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
