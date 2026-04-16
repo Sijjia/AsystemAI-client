@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* Wadik Font */
+@font-face {
+    font-family: 'Wadik';
+    src: url('/fonts/Wadik.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Apply Wadik to headings */
+h1, h2, h3 {
+    font-family: 'Wadik', sans-serif !important;
+}
+
+/* Logo font class */
+.font-wadik {
+    font-family: 'Wadik', sans-serif !important;
+}
+
+/* Custom Utilities for Flip Cards & Scrollbar */
+.perspective-1000 { perspective: 1000px; }
+.transform-style-3d { transform-style: preserve-3d; }
+.backface-hidden { backface-visibility: hidden; }
+.rotate-y-180 { transform: rotateY(180deg); }
+
+/* Smooth scrolling adjustment */
+html { scroll-behavior: smooth; }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Custom Selection Color */
+::selection { background-color: rgba(255, 255, 255, 0.2); color: white; }

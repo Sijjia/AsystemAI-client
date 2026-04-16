@@ -1,0 +1,652 @@
+<html lang="ru" class="scroll-smooth"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asystem - Автоматизация бизнеса</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Config for Custom Colors/Fonts -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                    },
+                    colors: {
+                        zinc: {
+                            850: '#1f1f22',
+                            950: '#09090b', // Base dark
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Utilities for Flip Cards & Scrollbar */
+        .perspective-1000 { perspective: 1000px; }
+        .transform-style-3d { transform-style: preserve-3d; }
+        .backface-hidden { backface-visibility: hidden; }
+        .rotate-y-180 { transform: rotateY(180deg); }
+        
+        /* Smooth scrolling adjustment */
+        html { scroll-behavior: smooth; }
+        
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar { -ms-overflow-style: none;  scrollbar-width: none; }
+
+        /* Custom Selection Color */
+        ::selection { background-color: rgba(255, 255, 255, 0.2); color: white; }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-300 font-sans antialiased selection:bg-white/10 selection:text-white">
+
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-zinc-950/80 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <a href="#" class="flex items-center gap-2 group">
+                    <!-- Logo Placeholder logic -->
+                    <div class="h-8 w-8 bg-white text-black rounded flex items-center justify-center font-bold text-lg tracking-tighter">A</div>
+                    <span class="text-white font-semibold tracking-tight text-lg group-hover:opacity-80 transition-opacity">Asystem</span>
+                </a>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#services" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Услуги</a>
+                <a href="#cases" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Кейсы</a>
+                <a href="#about" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">О компании</a>
+                <a href="#contacts" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Контакты</a>
+            </nav>
+
+            <a href="#contact" class="hidden md:block">
+                <button class="bg-white text-black hover:bg-zinc-200 text-xs font-semibold py-2 px-4 rounded-full transition-all duration-300">
+                    Обсудить проект
+                </button>
+            </a>
+            
+            <!-- Mobile Menu Button (simplified) -->
+            <button class="md:hidden text-white">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="relative">
+        
+        <!-- Hero Section -->
+        <section id="hero" class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+            <!-- Background Glow -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-blue-500/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+                
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-zinc-300 mb-8 hover:bg-white/10 transition-colors cursor-default">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    </span>
+                    Инновации в автоматизации
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-semibold text-white tracking-tight leading-[1.1] mb-6 max-w-4xl mx-auto">
+                    Автоматизируем <br class="hidden md:block"> 
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-500">бизнес-процессы</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+                    Создаем умные системы, которые освобождают ваше время и увеличивают прибыль за счет внедрения искусственного интеллекта.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#contact" class="w-full sm:w-auto bg-white text-black hover:bg-zinc-200 text-sm font-semibold py-3 px-8 rounded-full transition-all duration-300 flex items-center justify-center gap-2">
+                        Получить консультацию
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#cases" class="w-full sm:w-auto bg-zinc-900 border border-zinc-800 hover:bg-zinc-800 text-white text-sm font-medium py-3 px-8 rounded-full transition-all duration-300">
+                        Смотреть кейсы
+                    </a>
+                </div>
+
+                <!-- Video Placeholder/Container -->
+                <div class="mt-16 md:mt-24 relative rounded-xl border border-white/10 bg-zinc-900/50 backdrop-blur-sm overflow-hidden aspect-video max-w-5xl mx-auto shadow-2xl shadow-blue-900/20 group">
+                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent z-10"></div>
+                    <video autoplay="" loop="" muted="" playsinline="" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700">
+                        <source src="video/1113.mp4" type="video/mp4">
+                        <!-- Fallback image if video fails/is missing -->
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" alt="Hero Background" class="w-full h-full object-cover">
+                    </video>
+                    <div class="absolute bottom-6 left-6 z-20 flex items-center gap-4">
+                        <div class="h-10 w-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20">
+                            <i data-lucide="play" class="w-4 h-4 text-white fill-current"></i>
+                        </div>
+                        <p class="text-sm font-medium text-white">Как это работает</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section id="values" class="py-24 border-t border-white/5 bg-zinc-950">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-4">Почему выбирают нас</h2>
+                        <p class="text-zinc-400 max-w-md text-sm leading-relaxed">Технологический стек будущего для решения ваших задач сегодня.</p>
+                    </div>
+                    <div class="h-px bg-zinc-800 flex-1 ml-8 mb-2 hidden md:block"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Value 1 -->
+                    <div class="group p-6 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-all duration-300 hover:bg-zinc-900">
+                        <div class="h-12 w-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="brain-circuit" class="w-6 h-6 text-blue-400"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-white mb-2">Умные решения</h3>
+                        <p class="text-sm text-zinc-500 leading-relaxed group-hover:text-zinc-400 transition-colors">Используем AI и автоматизацию для максимальной эффективности процессов.</p>
+                    </div>
+
+                    <!-- Value 2 -->
+                    <div class="group p-6 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-all duration-300 hover:bg-zinc-900">
+                        <div class="h-12 w-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="link" class="w-6 h-6 text-purple-400"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-white mb-2">Интеграция</h3>
+                        <p class="text-sm text-zinc-500 leading-relaxed group-hover:text-zinc-400 transition-colors">Бесшовная интеграция с вашими существующими системами и инструментами.</p>
+                    </div>
+
+                    <!-- Value 3 -->
+                    <div class="group p-6 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-all duration-300 hover:bg-zinc-900">
+                        <div class="h-12 w-12 bg-green-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="trending-up" class="w-6 h-6 text-green-400"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-white mb-2">Масштабируемость</h3>
+                        <p class="text-sm text-zinc-500 leading-relaxed group-hover:text-zinc-400 transition-colors">Решения, которые растут вместе с вашим бизнесом без ограничений.</p>
+                    </div>
+
+                    <!-- Value 4 -->
+                    <div class="group p-6 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-all duration-300 hover:bg-zinc-900">
+                        <div class="h-12 w-12 bg-orange-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="life-buoy" class="w-6 h-6 text-orange-400"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-white mb-2">Поддержка</h3>
+                        <p class="text-sm text-zinc-500 leading-relaxed group-hover:text-zinc-400 transition-colors">Экспертная команда готова помочь вам на каждом этапе внедрения.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-24 border-t border-white/5 relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-3xl md:text-5xl font-semibold text-white tracking-tight mb-20 text-center">Наши решения</h2>
+
+                <div class="space-y-24">
+                    <!-- Service 1 -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+                        <div class="order-2 lg:order-1">
+                            <div class="h-10 w-10 bg-white/5 rounded-full flex items-center justify-center mb-6 border border-white/10">
+                                <i data-lucide="bot" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-white mb-4 tracking-tight">AI‑ассистенты для бизнеса</h3>
+                            <p class="text-zinc-400 leading-relaxed mb-6 text-sm md:text-base">
+                                Создаем интеллектуальных помощников для автоматизации клиентского сервиса, обработки заявок и внутренних процессов. Сокращение времени обработки запросов на 80%, работа 24/7 без выходных.
+                            </p>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center gap-3 text-sm text-zinc-500">
+                                    <i data-lucide="check" class="w-4 h-4 text-blue-500"></i> Понимают контекст и обучаются
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-zinc-500">
+                                    <i data-lucide="check" class="w-4 h-4 text-blue-500"></i> Интеграция с Telegram, WhatsApp
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="order-1 lg:order-2 bg-zinc-900 rounded-2xl border border-white/10 overflow-hidden aspect-[4/3] group">
+                            <img src="image/ассистенты для бизнеса.png" onerror="this.src='https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&amp;w=2006&amp;auto=format&amp;fit=crop'" alt="AI Assistant" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100">
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+                        <div class="order-1 lg:order-1 bg-zinc-900 rounded-2xl border border-white/10 overflow-hidden aspect-[4/3] group">
+                            <img src="image/сайты и веб разработка.png" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=2015&amp;auto=format&amp;fit=crop'" alt="Web Development" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100">
+                        </div>
+                        <div class="order-2 lg:order-2">
+                            <div class="h-10 w-10 bg-white/5 rounded-full flex items-center justify-center mb-6 border border-white/10">
+                                <i data-lucide="code-2" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-white mb-4 tracking-tight">AI‑сайты и веб‑разработка</h3>
+                            <p class="text-zinc-400 leading-relaxed mb-6 text-sm md:text-base">
+                                Разрабатываем современные веб-платформы с AI-персонализацией и конверсионным дизайном. Средняя конверсия наших сайтов — 4.1%, что в 3 раза выше среднерыночной.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+                        <div class="order-2 lg:order-1">
+                            <div class="h-10 w-10 bg-white/5 rounded-full flex items-center justify-center mb-6 border border-white/10">
+                                <i data-lucide="bar-chart-3" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-white mb-4 tracking-tight">CRM и интеграции</h3>
+                            <p class="text-zinc-400 leading-relaxed mb-6 text-sm md:text-base">
+                                Внедряем CRM-системы с предиктивной аналитикой, автоматическим скорингом лидов и AI-рекомендациями. Увеличение закрываемости сделок на 45%.
+                            </p>
+                        </div>
+                        <div class="order-1 lg:order-2 bg-zinc-900 rounded-2xl border border-white/10 overflow-hidden aspect-[4/3] group">
+                            <img src="image/срм система.png" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=2070&amp;auto=format&amp;fit=crop'" alt="CRM" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cases Section (Flip Cards) -->
+        <section id="cases" class="py-24 border-t border-white/5 bg-zinc-950">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-4">Наши проекты</h2>
+                <p class="text-zinc-400 mb-12 text-sm">Мы создаём решения для министерств, корпораций и быстрорастущих компаний.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Case 1 -->
+                    <div class="group h-[360px] perspective-1000 cursor-pointer">
+                        <div class="relative w-full h-full transition-all duration-500 transform-style-3d group-hover:rotate-y-180">
+                            <!-- Front -->
+                            <div class="absolute inset-0 backface-hidden bg-zinc-900 border border-white/5 rounded-2xl p-6 flex flex-col justify-between hover:border-white/20 transition-colors">
+                                <div>
+                                    <div class="flex gap-2 mb-6">
+                                        <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center overflow-hidden">
+                                            <i data-lucide="building-2" class="w-5 h-5 text-white"></i>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-lg font-semibold text-white leading-tight mb-3">Министерство образования КР</h3>
+                                    <p class="text-xs text-zinc-500">Разработка платформ и систем автоматизированного управления.</p>
+                                </div>
+                                <div class="text-xs text-white font-medium flex items-center gap-2">
+                                    Подробнее <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                                </div>
+                            </div>
+                            <!-- Back -->
+                            <div class="absolute inset-0 backface-hidden rotate-y-180 bg-zinc-100 rounded-2xl p-6 flex flex-col justify-center text-zinc-900 border border-transparent">
+                                <p class="text-[10px] uppercase tracking-wider font-bold text-zinc-500 mb-1">Результат</p>
+                                <p class="text-sm font-medium mb-4">Масштабный государственный проект цифровизации образования.</p>
+                                <p class="text-[10px] uppercase tracking-wider font-bold text-zinc-500 mb-1">Наш вклад</p>
+                                <p class="text-sm">Архитектура ПО, безопасность данных, консалтинг.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case 2 -->
+                    <div class="group h-[360px] perspective-1000 cursor-pointer">
+                        <div class="relative w-full h-full transition-all duration-500 transform-style-3d group-hover:rotate-y-180">
+                            <!-- Front -->
+                            <div class="absolute inset-0 backface-hidden bg-zinc-900 border border-white/5 rounded-2xl p-6 flex flex-col justify-between hover:border-white/20 transition-colors">
+                                <div>
+                                    <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mb-6">
+                                        <i data-lucide="bitcoin" class="w-5 h-5 text-white"></i>
+                                    </div>
+                                    <h3 class="text-lg font-semibold text-white leading-tight mb-3">АУРВА</h3>
+                                    <p class="text-xs text-zinc-500">Сопровождение цифровой трансформации крипто-ассоциации.</p>
+                                </div>
+                                <div class="text-xs text-white font-medium flex items-center gap-2">Подробнее <i data-lucide="arrow-right" class="w-3 h-3"></i></div>
+                            </div>
+                            <!-- Back -->
+                            <div class="absolute inset-0 backface-hidden rotate-y-180 bg-zinc-100 rounded-2xl p-6 flex flex-col justify-center text-zinc-900">
+                                <p class="text-[10px] uppercase tracking-wider font-bold text-zinc-500 mb-1">Решение</p>
+                                <p class="text-sm font-medium mb-4">Платформы управления членством, AML и криптокомплаенс.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case 3 -->
+                    <div class="group h-[360px] perspective-1000 cursor-pointer">
+                        <div class="relative w-full h-full transition-all duration-500 transform-style-3d group-hover:rotate-y-180">
+                            <!-- Front -->
+                            <div class="absolute inset-0 backface-hidden bg-zinc-900 border border-white/5 rounded-2xl p-6 flex flex-col justify-between hover:border-white/20 transition-colors">
+                                <div>
+                                    <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mb-6">
+                                        <i data-lucide="briefcase" class="w-5 h-5 text-white"></i>
+                                    </div>
+                                    <h3 class="text-lg font-semibold text-white leading-tight mb-3">Бизнес-ассоциация JIA</h3>
+                                    <p class="text-xs text-zinc-500">Цифровизация процессов и поддержка предпринимателей.</p>
+                                </div>
+                                <div class="text-xs text-white font-medium flex items-center gap-2">Подробнее <i data-lucide="arrow-right" class="w-3 h-3"></i></div>
+                            </div>
+                            <!-- Back -->
+                            <div class="absolute inset-0 backface-hidden rotate-y-180 bg-zinc-100 rounded-2xl p-6 flex flex-col justify-center text-zinc-900">
+                                <p class="text-[10px] uppercase tracking-wider font-bold text-zinc-500 mb-1">Результат</p>
+                                <p class="text-sm font-medium mb-4">Рост регистраций +35%, сокращение обработки -50%.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case 4 -->
+                    <div class="group h-[360px] perspective-1000 cursor-pointer">
+                        <div class="relative w-full h-full transition-all duration-500 transform-style-3d group-hover:rotate-y-180">
+                            <!-- Front -->
+                            <div class="absolute inset-0 backface-hidden bg-zinc-900 border border-white/5 rounded-2xl p-6 flex flex-col justify-between hover:border-white/20 transition-colors">
+                                <div>
+                                    <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mb-6">
+                                        <i data-lucide="truck" class="w-5 h-5 text-white"></i>
+                                    </div>
+                                    <h3 class="text-lg font-semibold text-white leading-tight mb-3">Tulpar Express</h3>
+                                    <p class="text-xs text-zinc-500">Цифровая экосистема для логистической компании.</p>
+                                </div>
+                                <div class="text-xs text-white font-medium flex items-center gap-2">Подробнее <i data-lucide="arrow-right" class="w-3 h-3"></i></div>
+                            </div>
+                            <!-- Back -->
+                            <div class="absolute inset-0 backface-hidden rotate-y-180 bg-zinc-100 rounded-2xl p-6 flex flex-col justify-center text-zinc-900">
+                                <p class="text-[10px] uppercase tracking-wider font-bold text-zinc-500 mb-1">Решение</p>
+                                <p class="text-sm font-medium mb-4">Веб-сайт, мобильное приложение, ребрендинг.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="py-24 border-t border-white/5 bg-zinc-950">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-12">Команда экспертов</h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
+                    <!-- Team Member Template (Repeated for variety) -->
+                    <!-- 1. Asylbek -->
+                    <div class="group">
+                        <div class="overflow-hidden rounded-xl bg-zinc-900 border border-white/5 aspect-square mb-4 relative">
+                            <img src="image/Асылбек.png" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&amp;w=2000&amp;auto=format&amp;fit=crop'" alt="Асылбек Айтматов" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0">
+                        </div>
+                        <h3 class="text-base font-medium text-white">Асылбек Айтматов</h3>
+                        <p class="text-xs text-zinc-500 mb-2">CEO &amp; Founder</p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-[10px] bg-white/5 text-zinc-400 px-2 py-0.5 rounded border border-white/5">Стратегия</span>
+                            <span class="text-[10px] bg-white/5 text-zinc-400 px-2 py-0.5 rounded border border-white/5">AI</span>
+                        </div>
+                    </div>
+
+                    <!-- 2. Urmat -->
+                    <div class="group">
+                        <div class="overflow-hidden rounded-xl bg-zinc-900 border border-white/5 aspect-square mb-4 relative">
+                            <img src="image/Урмат.png" onerror="this.src='https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&amp;w=2000&amp;auto=format&amp;fit=crop'" alt="Урмат Мырзабеков" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0">
+                        </div>
+                        <h3 class="text-base font-medium text-white">Урмат Мырзабеков</h3>
+                        <p class="text-xs text-zinc-500 mb-2">Lead Developer</p>
+                        <div class="flex gap-2 flex-wrap">
+                             <span class="text-[10px] bg-white/5 text-zinc-400 px-2 py-0.5 rounded border border-white/5">Архитектура</span>
+                        </div>
+                    </div>
+
+                    <!-- 3. Asel -->
+                    <div class="group">
+                        <div class="overflow-hidden rounded-xl bg-zinc-900 border border-white/5 aspect-square mb-4 relative">
+                            <img src="image/Асель.png" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&amp;w=2000&amp;auto=format&amp;fit=crop'" alt="Асель Кадырова" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0">
+                        </div>
+                        <h3 class="text-base font-medium text-white">Асель Кадырова</h3>
+                        <p class="text-xs text-zinc-500 mb-2">CFO</p>
+                        <div class="flex gap-2 flex-wrap">
+                             <span class="text-[10px] bg-white/5 text-zinc-400 px-2 py-0.5 rounded border border-white/5">Финансы</span>
+                        </div>
+                    </div>
+
+                     <!-- 6. Saadat -->
+                     <div class="group">
+                        <div class="overflow-hidden rounded-xl bg-zinc-900 border border-white/5 aspect-square mb-4 relative">
+                            <img src="image/Саадат 2.png" onerror="this.src='https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&amp;w=2000&amp;auto=format&amp;fit=crop'" alt="Саадат Мырзабекова" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0">
+                        </div>
+                        <h3 class="text-base font-medium text-white">Саадат Мырзабекова</h3>
+                        <p class="text-xs text-zinc-500 mb-2">UX/UI Designer</p>
+                        <div class="flex gap-2 flex-wrap">
+                             <span class="text-[10px] bg-white/5 text-zinc-400 px-2 py-0.5 rounded border border-white/5">Design</span>
+                        </div>
+                    </div>
+
+                    <!-- Add more team members here similarly... keeping it concise for the snippet but following the grid -->
+                    <div class="group">
+                        <div class="overflow-hidden rounded-xl bg-zinc-900 border border-white/5 aspect-square mb-4 relative">
+                            <img src="image/Дастан.png" onerror="this.src='https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&amp;w=2000&amp;auto=format&amp;fit=crop'" alt="Дастан" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0">
+                        </div>
+                        <h3 class="text-base font-medium text-white">Дастан Султанов</h3>
+                        <p class="text-xs text-zinc-500 mb-2">CRM Specialist</p>
+                    </div>
+
+                    <div class="group">
+                        <div class="overflow-hidden rounded-xl bg-zinc-900 border border-white/5 aspect-square mb-4 relative">
+                            <img src="image/иван.png" onerror="this.src='https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&amp;w=2000&amp;auto=format&amp;fit=crop'" alt="Иван Шишкин" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0">
+                        </div>
+                        <h3 class="text-base font-medium text-white">Иван Шишкин</h3>
+                        <p class="text-xs text-zinc-500 mb-2">Creative Director</p>
+                    </div>
+
+                    <div class="group">
+                        <div class="overflow-hidden rounded-xl bg-zinc-900 border border-white/5 aspect-square mb-4 relative">
+                            <img src="image/Суймонкул.png" onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&amp;w=2000&amp;auto=format&amp;fit=crop'" alt="Суймонкул" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0">
+                        </div>
+                        <h3 class="text-base font-medium text-white">Суймонкул Эралиев</h3>
+                        <p class="text-xs text-zinc-500 mb-2">Backend Dev</p>
+                    </div>
+                    
+                    <div class="group">
+                        <div class="overflow-hidden rounded-xl bg-zinc-900 border border-white/5 aspect-square mb-4 relative">
+                            <img src="image/Нерсес.png" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&amp;w=2000&amp;auto=format&amp;fit=crop'" alt="Нерсес" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0">
+                        </div>
+                        <h3 class="text-base font-medium text-white">Нерсес Дапагян</h3>
+                        <p class="text-xs text-zinc-500 mb-2">Project Manager</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="py-24 border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-16">Процесс работы</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
+                    <!-- Line connecting steps (hidden on mobile) -->
+                    <div class="hidden md:block absolute top-6 left-0 right-0 h-px bg-zinc-800 -z-10"></div>
+
+                    <!-- Step 1 -->
+                    <div class="relative pt-6 md:pt-0">
+                        <div class="h-12 w-12 bg-zinc-950 border border-zinc-800 rounded-full flex items-center justify-center mb-6 z-10 mx-auto md:mx-0 text-white font-mono text-sm">01</div>
+                        <h3 class="text-base font-medium text-white mb-2 text-center md:text-left">Анализ</h3>
+                        <p class="text-xs text-zinc-500 text-center md:text-left">Изучаем бизнес, находим точки роста.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="relative pt-6 md:pt-0">
+                         <div class="h-12 w-12 bg-zinc-950 border border-zinc-800 rounded-full flex items-center justify-center mb-6 z-10 mx-auto md:mx-0 text-white font-mono text-sm">02</div>
+                        <h3 class="text-base font-medium text-white mb-2 text-center md:text-left">Стратегия</h3>
+                        <p class="text-xs text-zinc-500 text-center md:text-left">План внедрения и KPI.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="relative pt-6 md:pt-0">
+                         <div class="h-12 w-12 bg-zinc-950 border border-zinc-800 rounded-full flex items-center justify-center mb-6 z-10 mx-auto md:mx-0 text-white font-mono text-sm">03</div>
+                        <h3 class="text-base font-medium text-white mb-2 text-center md:text-left">Разработка</h3>
+                        <p class="text-xs text-zinc-500 text-center md:text-left">Создание и тесты MVP.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="relative pt-6 md:pt-0">
+                         <div class="h-12 w-12 bg-zinc-950 border border-zinc-800 rounded-full flex items-center justify-center mb-6 z-10 mx-auto md:mx-0 text-white font-mono text-sm">04</div>
+                        <h3 class="text-base font-medium text-white mb-2 text-center md:text-left">Внедрение</h3>
+                        <p class="text-xs text-zinc-500 text-center md:text-left">Запуск и обучение команды.</p>
+                    </div>
+                    <!-- Step 5 -->
+                    <div class="relative pt-6 md:pt-0">
+                         <div class="h-12 w-12 bg-zinc-950 border border-zinc-800 rounded-full flex items-center justify-center mb-6 z-10 mx-auto md:mx-0 text-white font-mono text-sm">05</div>
+                        <h3 class="text-base font-medium text-white mb-2 text-center md:text-left">Поддержка</h3>
+                        <p class="text-xs text-zinc-500 text-center md:text-left">Мониторинг и развитие.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 border-t border-white/5 bg-zinc-900/30">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-6">Давайте обсудим<br>ваш проект</h2>
+                        <p class="text-zinc-400 mb-12 text-sm leading-relaxed">
+                            Оставьте заявку, и мы подготовим коммерческое предложение за 24 часа. Без навязчивых продаж — только экспертные рекомендации.
+                        </p>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="p-2 bg-white/5 rounded-lg border border-white/5">
+                                    <i data-lucide="mail" class="w-5 h-5 text-zinc-300"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-1">Email</p>
+                                    <a href="mailto:asyljan@gmail.com" class="text-white hover:text-zinc-300 transition-colors">asyljan@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="p-2 bg-white/5 rounded-lg border border-white/5">
+                                    <i data-lucide="phone" class="w-5 h-5 text-zinc-300"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-1">Телефон</p>
+                                    <a href="tel:+996772671924" class="text-white hover:text-zinc-300 transition-colors">+996 772 67 19 24</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="p-2 bg-white/5 rounded-lg border border-white/5">
+                                    <i data-lucide="map-pin" class="w-5 h-5 text-zinc-300"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-1">Адрес</p>
+                                    <p class="text-zinc-300">г. Бишкек, ул. Суюмбаева 123/1</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-zinc-950 border border-white/5 rounded-2xl p-8 shadow-2xl">
+                        <form class="space-y-6" id="contactForm">
+                            <div class="grid grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-xs text-zinc-400 font-medium">Имя</label>
+                                    <input type="text" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all placeholder:text-zinc-700" placeholder="Иван" required="">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs text-zinc-400 font-medium">Телефон</label>
+                                    <input type="tel" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all placeholder:text-zinc-700" placeholder="+996..." required="">
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-2">
+                                <label class="text-xs text-zinc-400 font-medium">Услуга</label>
+                                <select class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all appearance-none cursor-pointer">
+                                    <option>AI-ассистенты</option>
+                                    <option>Веб-разработка</option>
+                                    <option>CRM и интеграции</option>
+                                    <option>Дизайн</option>
+                                </select>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-xs text-zinc-400 font-medium">О проекте</label>
+                                <textarea rows="4" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all placeholder:text-zinc-700 resize-none" placeholder="Расскажите о вашей задаче..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-white text-black font-semibold text-sm py-3 rounded-lg hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2">
+                                Отправить заявку <i data-lucide="send" class="w-4 h-4"></i>
+                            </button>
+                            <p class="text-[10px] text-zinc-600 text-center">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-white/5 bg-zinc-950 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2 md:col-span-1">
+                    <a href="#" class="flex items-center gap-2 mb-4">
+                        <div class="h-6 w-6 bg-white text-black rounded flex items-center justify-center font-bold text-xs">A</div>
+                        <span class="text-white font-semibold text-base">Asystem</span>
+                    </a>
+                    <p class="text-xs text-zinc-500 mb-6">Автоматизируем бизнес-процессы для роста вашей компании.</p>
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/asylbek_aitmatov?igsh=dThyZHBwMm51Z2Q=" class="text-zinc-500 hover:text-white transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                        <a href="https://t.me/asylbek_aitmatov" class="text-zinc-500 hover:text-white transition-colors"><i data-lucide="send" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white text-sm font-semibold mb-4">Услуги</h4>
+                    <ul class="space-y-2 text-xs text-zinc-500">
+                        <li><a href="#" class="hover:text-white transition-colors">AI-ассистенты</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Веб-разработка</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">CRM системы</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white text-sm font-semibold mb-4">Компания</h4>
+                    <ul class="space-y-2 text-xs text-zinc-500">
+                        <li><a href="#about" class="hover:text-white transition-colors">О нас</a></li>
+                        <li><a href="#cases" class="hover:text-white transition-colors">Кейсы</a></li>
+                        <li><a href="#contacts" class="hover:text-white transition-colors">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white text-sm font-semibold mb-4">Документы</h4>
+                    <ul class="space-y-2 text-xs text-zinc-500">
+                        <li><a href="#" class="hover:text-white transition-colors">Политика конфиденциальности</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Договор оферты</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[10px] text-zinc-600">© 2024 Asystem. Все права защищены.</p>
+                <p class="text-[10px] text-zinc-600">Designed with AI.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+        
+        // Simple form handling (prevent default)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = 'Отправлено!';
+            btn.classList.remove('bg-white', 'text-black');
+            btn.classList.add('bg-green-500', 'text-white');
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.classList.add('bg-white', 'text-black');
+                btn.classList.remove('bg-green-500', 'text-white');
+                this.reset();
+            }, 3000);
+        });
+    </script>
+
+</body></html>

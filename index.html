@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asystem - Автоматизация бизнеса</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Wadik';
+            src: url('fonts/Wadik.woff2') format('woff2'),
+                 url('fonts/Wadik.woff') format('woff'),
+                 url('fonts/Wadik.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css?v=104">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="circulargallery.js?v=20" defer></script>
+    <script src="ripplegrid.js?v=13" defer></script>
+    <script src="cardnav.js?v=4" defer></script>
+    <script src="scrollstack.js?v=13" defer></script>
+    <script src="magicbento.js?v=1" defer></script>
+    <script src="script.js?v=11" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="#" class="logo-mask" aria-label="Home"></a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="#values">Преимущества</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#cases">Проекты</a></li>
+                    <li><a href="#team">Команда</a></li>
+                    <li class="mobile-only-cta" style="display: none;"><a href="#contact" class="header-cta" style="display: block; text-align: center;">Обсудить проект</a></li>
+                </ul>
+
+                <div class="header-actions" style="display: flex; gap: 16px; align-items: center;">
+                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme" style="background: transparent; border: none; font-size: 24px; cursor: pointer; color: var(--t-1);">🌙</button>
+                    <a href="#contact" class="header-cta">Обсудить проект</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding-top: 70px;">
+        <section id="hero" aria-label="Hero">
+            <div class="hero-video" id="ripplegrid-container">
+                <canvas id="hero-ripplegrid"></canvas>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="hero-badge-dot"></span>
+                        <span class="hero-badge-text">Разработка ИИ и автоматизация 2026</span>
+                    </div>
+                    <h1 class="shiny-text">
+                        Интеллектуальная<br>
+                        автоматизация бизнеса<br>
+                        для роста вашей компании
+                    </h1>
+                    <p class="hero-subtitle">Создаем умные системы, которые освобождают ваше время<br>и&nbsp;увеличивают прибыль</p>
+                    <a href="#contact"><button class="hero-button"><span>Получить консультацию</span></button></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="values" aria-label="Values">
+            <div class="container">
+                <h2 class="section-title">Почему<br class="mobile-br"> выбирают<br class="mobile-br"> нас</h2>
+                <p class="section-subtitle" style="visibility: hidden; font-size: 0; line-height: 0; height: 0; padding: 0; overflow: hidden; margin-top: 0;"></p>
+                <div class="values-grid">
+                    <div class="card-glow-wrapper">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <img src="image/ChatGPT Image 19 сент. 2025 г., 14_06_17.png" alt="AI Icon">
+                            </div>
+                            <h3>Умные решения</h3>
+                            <p>Используем AI и автоматизацию для максимальной эффективности ваших процессов</p>
+                        </div>
+                    </div>
+                    <div class="card-glow-wrapper">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <img src="image/ChatGPT Image 19 сент. 2025 г., 13_54_27.png" alt="Integration Icon" class="icon-large">
+                            </div>
+                            <h3>Полная интеграция</h3>
+                            <p>Бесшовная интеграция с вашими существующими системами и&nbsp;инструментами</p>
+                        </div>
+                    </div>
+                    <div class="card-glow-wrapper">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <img src="image/ChatGPT Image 19 сент. 2025 г., 13_44_01.png" alt="Scale Icon" class="icon-large">
+                            </div>
+                            <h3>Масштаби-<br>руемость</h3>
+                            <p>Решения, которые растут вместе с вашим бизнесом без&nbsp;ограничений</p>
+                        </div>
+                    </div>
+                    <div class="card-glow-wrapper">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <img src="image/ChatGPT Image 19 сент. 2025 г., 14_00_33.png" alt="Support Icon">
+                            </div>
+                            <h3>Надежная поддержка</h3>
+                            <p>Экспертная команда готова помочь вам на каждом этапе внедрения</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" aria-label="Services">
+            <div class="container services-layout">
+                <div class="services-left">
+                    <h2 class="section-title animate-on-scroll">Наши решения</h2>
+                    <p class="services-subtitle animate-on-scroll delay-100">Интеллектуальные инструменты, <br class="mobile-br">которые берут рутину на себя <br class="mobile-br">и выводят ваш бизнес на новый уровень.</p>
+                    <div class="services-cta animate-on-scroll delay-200">
+                        <button class="hero-button">Обсудить проект</button>
+                    </div>
+                </div>
+                
+                <div class="services-right">
+                    <div class="services-list card-swap-container" id="servicesCardSwap">
+                        <div class="card-glow-wrapper card-swap-item">
+                            <div class="service-card-window">
+                                <div class="service-card-topbar">
+                                    <span class="topbar-icon">✧</span>
+                                    <h3>AI‑ассистенты для бизнеса</h3>
+                                </div>
+                                <div class="service-card-body">
+                                    <div class="service-content-text">
+                                        <p>Создаем интеллектуальных помощников для клиентского сервиса и внутренних процессов. AI-боты обучаются на ваших данных. Сокращение времени обработки запросов на 80%, работа 24/7 без выходных.</p>
+                                    </div>
+                                    <div class="service-content-image">
+                                        <img src="image/ассистенты для бизнеса.png" alt="AI-ассистенты">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-glow-wrapper card-swap-item">
+                            <div class="service-card-window">
+                                <div class="service-card-topbar">
+                                    <span class="topbar-icon">&lt;/&gt;</span>
+                                    <h3>AI‑сайты и веб‑разработка</h3>
+                                </div>
+                                <div class="service-card-body">
+                                    <div class="service-content-text">
+                                        <p>Современные веб-платформы с адаптивным контентом и конверсионным дизайном. Машинное обучение оптимизирует пользовательский опыт. Конверсия наших сайтов в 3 раза выше среднерыночной.</p>
+                                    </div>
+                                    <div class="service-content-image">
+                                        <img src="image/сайты и веб разработка.png" alt="Веб-разработка">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-glow-wrapper card-swap-item">
+                            <div class="service-card-window">
+                                <div class="service-card-topbar">
+                                    <span class="topbar-icon">⟳</span>
+                                    <h3>CRM и интеграции</h3>
+                                </div>
+                                <div class="service-card-body">
+                                    <div class="service-content-text">
+                                        <p>Внедряем CRM-системы с автоматическим скорингом лидов и умными рекомендациями. Полная интеграция с текущим софтом для увеличения закрываемости сделок на 45%.</p>
+                                    </div>
+                                    <div class="service-content-image">
+                                        <img src="image/срм система.png" alt="CRM и интеграции">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-glow-wrapper card-swap-item">
+                            <div class="service-card-window">
+                                <div class="service-card-topbar">
+                                    <span class="topbar-icon">✎</span>
+                                    <h3>AI‑дизайн и брендинг</h3>
+                                </div>
+                                <div class="service-card-body">
+                                    <div class="service-content-text">
+                                        <p>Генеративный дизайн и уникальные концепции для брендинга. Разрабатываем логотипы и презентации с использованием передовых AI-сетей Midjourney и Stable Diffusion.</p>
+                                    </div>
+                                    <div class="service-content-image">
+                                        <img src="image/дизайн.png" alt="AI-дизайн">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cases" aria-label="Cases">
+            <div class="container">
+                <h2 class="section-title">Наши проекты и&nbsp;клиенты</h2>
+                <p class="section-subtitle">Мы создаём решения для министерств, корпораций и&nbsp;быстрорастущих компаний.</p>
+                <div class="cases-grid">
+                    <div class="case-flip-card">
+                        <div class="case-flip-inner">
+                            <div class="case-flip-front">
+                                <h3 class="case-client">Министерство образования<br>Кыргызской Республики</h3>
+                                <p class="case-short">Разработка и&nbsp;внедрение ПО, платформ доступа к&nbsp;учебным ресурсам и&nbsp;систем автоматизированного управления</p>
+                                <div class="case-logo case-logo-double">
+                                    <img src="image/2019-06-24-060420.761609NationalemblemofKyrgyzstan2016.svg.png" alt="Герб КР">
+                                    <img src="image/logo_MEaS_KR_600_gct98Jw.png" alt="Министерство образования КР">
+                                </div>
+                                <div class="case-accent"></div>
+                            </div>
+                            <div class="case-flip-back">
+                                <div class="case-back-content">
+                                    <p class="case-label">Проект</p>
+                                    <p>Цифровизация образования в&nbsp;рамках национальных программ. Разработка ПО, платформ и&nbsp;систем управления</p>
+                                    <p class="case-label">Наш вклад</p>
+                                    <p>Архитектура ПО, интеграция, безопасность для тысяч пользователей, консалтинг по&nbsp;госстандартам</p>
+                                    <p class="case-label">Результат</p>
+                                    <p>Масштабный государственный проект на&nbsp;уровне министерств</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-flip-card">
+                        <div class="case-flip-inner">
+                            <div class="case-flip-front">
+                                <h3 class="case-client">АУРВА</h3>
+                                <p class="case-short">Сопровождение цифровой трансформации ассоциации</p>
+                                <div class="case-logo">
+                                    <img src="image/_SITE.svg" alt="АУРВА" class="logo-aurva">
+                                </div>
+                                <div class="case-accent"></div>
+                            </div>
+                            <div class="case-flip-back">
+                                <div class="case-back-content">
+                                    <p class="case-label">Клиент</p>
+                                    <p>Ассоциация Участников Рынка Виртуальных Активов КР — ключевой игрок криптоиндустрии</p>
+                                    <p class="case-label">Решение</p>
+                                    <p>Платформы управления членством, системы безопасного взаимодействия, экспертиза в&nbsp;AML и&nbsp;криптокомплаенс</p>
+                                    <p class="case-label">Результат</p>
+                                    <p>Опыт работы с&nbsp;технологическими рынками и&nbsp;требованиями регуляторов</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-flip-card">
+                        <div class="case-flip-inner">
+                            <div class="case-flip-front">
+                                <h3 class="case-client">Red Petroleum</h3>
+                                <p class="case-short">Вывод крупного топливного бренда на инновационный рынок электротранспорта</p>
+                                <div class="case-logo">
+                                    <img src="image/Red Charge logo.png" alt="Red Charge" style="max-height: 62px; object-fit: contain;">
+                                </div>
+                                <div class="case-accent"></div>
+                            </div>
+                            <div class="case-flip-back">
+                                <div class="case-back-content">
+                                    <p class="case-label">Задача</p>
+                                    <p>Проектирование платформы и OCPP-бэкенда для ЭЗС с бесшовной интеграцией в экосистему RedPay.</p>
+                                    <p class="case-label">Решение</p>
+                                    <p>Разработка отказоустойчивого ядра, админ-панели управления, симулятора станций для отладки и API.</p>
+                                    <p class="case-label">Результат</p>
+                                    <p>Платформа развернута у клиента. Проходит тестирование биллинга на реальных ЭЗС перед релизом.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-flip-card">
+                        <div class="case-flip-inner">
+                            <div class="case-flip-front">
+                                <h3 class="case-client">Tulpar Express</h3>
+                                <p class="case-short">Цифровая экосистема для логистической компании</p>
+                                <div class="case-logo">
+                                    <img src="image/Лого.png" alt="Tulpar Express">
+                                </div>
+                                <div class="case-accent"></div>
+                            </div>
+                            <div class="case-flip-back">
+                                <div class="case-back-content">
+                                    <p class="case-label">Задача</p>
+                                    <p>Модернизация клиентского сервиса, автоматизация регистрации и&nbsp;отслеживания, ребрендинг</p>
+                                    <p class="case-label">Решение</p>
+                                    <p>ПО для регистрации, веб-сайт, мобильное приложение, новый фирменный стиль, оформление соцсетей</p>
+                                    <p class="case-label">Результат</p>
+                                    <p>Сокращение времени регистрации, прозрачность процессов, укрепление бренда</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cases-cta" style="text-align: center; margin-top: 64px;">
+                    <a href="/projects.html" class="outline-button" style="text-decoration: none;"><span>Смотреть все проекты</span></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" aria-label="Team">
+            <div class="container">
+                <h2 class="section-title">Наша команда</h2>
+                <p class="section-subtitle">Эксперты, которые создают будущее вашего бизнеса</p>
+
+                <!-- Team Group Photo with Hover Effect -->
+                <div class="team-hero">
+                    <div class="team-hero-image">
+                        <img src="image/IMG_6453.jpg" alt="Команда Asystem" class="team-photo-main">
+                        <img src="image/unnamed (17).jpg" alt="Команда Asystem" class="team-photo-hover">
+                    </div>
+                </div>
+
+                <!-- Team Members Grid -->
+                <div class="circular-gallery-container" id="teamGallery">
+                    <!-- 1. Асылбек Айтматов -->
+                    <div class="team-member-card circular-card">
+                        <div class="team-member-photo">
+                            <img src="image/Асылбек.png" alt="Асылбек Айтматов">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Асылбек Айтматов</h3>
+                            <p class="team-member-role">Директор, основатель компании</p>
+                            <p class="team-member-desc">Руководит стратегией развития ASystem и направлением инноваций в области искусственного интеллекта.</p>
+                            <div class="team-member-tags">
+                                <span class="tag">Управление</span>
+                                <span class="tag">Стратегия</span>
+                                <span class="tag">AI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Урмат Мырзабеков -->
+                    <div class="team-member-card circular-card">
+                        <div class="team-member-photo">
+                            <img src="image/Урмат.png" alt="Урмат Мырзабеков">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Урмат Мырзабеков</h3>
+                            <p class="team-member-role">Ведущий разработчик</p>
+                            <p class="team-member-desc">Отвечает за архитектуру и техническую реализацию продуктов компании.</p>
+                            <div class="team-member-tags">
+                                <span class="tag">Разработка</span>
+                                <span class="tag">Архитектура</span>
+                                <span class="tag">Интеграции</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Насип Толобай уулу -->
+                    <div class="team-member-card circular-card">
+                        <div class="team-member-photo">
+                            <img src="image/Насип.png" alt="Насип Толобай уулу">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Насип Толобай уулу</h3>
+                            <p class="team-member-role">No Code разработчик</p>
+                            <p class="team-member-desc">Создаёт цифровые решения без программирования, ускоряя запуск продуктов.</p>
+                            <div class="team-member-tags">
+                                <span class="tag">No Code</span>
+                                <span class="tag">Автоматизация</span>
+                                <span class="tag">Fintech</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Дастан Султанов -->
+                    <div class="team-member-card circular-card">
+                        <div class="team-member-photo">
+                            <img src="image/Дастан.png" alt="Дастан Султанов">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Дастан Султанов</h3>
+                            <p class="team-member-role">CRM-специалист</p>
+                            <p class="team-member-desc">Настраивает CRM-системы, оптимизирует процессы продаж и взаимодействия с клиентами.</p>
+                            <div class="team-member-tags">
+                                <span class="tag">CRM</span>
+                                <span class="tag">Аналитика</span>
+                                <span class="tag">Автоматизация</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Саадат Мырзабекова -->
+                    <div class="team-member-card circular-card">
+                        <div class="team-member-photo">
+                            <img src="image/Саадат.png" alt="Саадат Мырзабекова">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Саадат Мырзабекова</h3>
+                            <p class="team-member-role">UX/UI дизайнер, фронтенд-разработка</p>
+                            <p class="team-member-desc">Разрабатывает интерфейсы и визуальные решения, отвечающие за удобство и эстетику продуктов.</p>
+                            <div class="team-member-tags">
+                                <span class="tag">UX/UI</span>
+                                <span class="tag">Frontend</span>
+                                <span class="tag">Дизайн</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Суймонкул Эралиев -->
+                    <div class="team-member-card circular-card">
+                        <div class="team-member-photo">
+                            <img src="image/124.jpg" alt="Суймонкул Эралиев">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Суймонкул Эралиев</h3>
+                            <p class="team-member-role">Бэкенд-разработчик</p>
+                            <p class="team-member-desc">Разрабатывает и поддерживает серверную часть проектов, обеспечивает стабильность и производительность систем.</p>
+                            <div class="team-member-tags">
+                                <span class="tag">Backend</span>
+                                <span class="tag">API</span>
+                                <span class="tag">Базы данных</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Акылай Анваржан -->
+                    <div class="team-member-card circular-card">
+                        <div class="team-member-photo">
+                            <img src="image/Акылай.png" alt="Акылай Анваржан">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Акылай Анваржан</h3>
+                            <p class="team-member-role">Специалист по делопроизводству</p>
+                            <p class="team-member-desc">Ведёт документацию и обеспечивает административную поддержку команды.</p>
+                            <div class="team-member-tags">
+                                <span class="tag">Документы</span>
+                                <span class="tag">Админ</span>
+                                <span class="tag">Координация</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 9. Эрмек Шералиев -->
+                    <div class="team-member-card circular-card">
+                        <div class="team-member-photo">
+                            <img src="image/Эрмек.png" alt="Эрмек Шералиев">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Эрмек Шералиев</h3>
+                            <p class="team-member-role">Back-End Разработчик</p>
+                            <p class="team-member-desc">Разрабатывает сложную серверную архитектуру, обеспечивая масштабируемость и безопасность систем.</p>
+                            <div class="team-member-tags">
+                                <span class="tag">SaaS</span>
+                                <span class="tag">Крипто</span>
+                                <span class="tag">Self-hosted</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 10. Руслан Айдарбек уулу -->
+                    <div class="team-member-card circular-card">
+                        <div class="team-member-photo">
+                            <img src="image/Руслан.png" alt="Руслан Айдарбек уулу">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Руслан Айдарбек уулу</h3>
+                            <p class="team-member-role">Разработчик</p>
+                            <p class="team-member-desc">Проектирует архитектуру программного обеспечения и внедряет современные технологические интеграции.</p>
+                            <div class="team-member-tags">
+                                <span class="tag">Архитектура</span>
+                                <span class="tag">Приложения</span>
+                                <span class="tag">Интеграции</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 11. Эмир Емильбеков -->
+                    <div class="team-member-card circular-card">
+                        <div class="team-member-photo">
+                            <img src="image/Эмир.png" alt="Эмир Емильбеков">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Эмир Емильбеков</h3>
+                            <p class="team-member-role">Инженер-программист</p>
+                            <p class="team-member-desc">Занимается разработкой, высоконагруженной интеграцией и профильным тестированием компонентов.</p>
+                            <div class="team-member-tags">
+                                <span class="tag">Разработка</span>
+                                <span class="tag">Поддержка</span>
+                                <span class="tag">Тестирование</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 12. Алан Бешев -->
+                    <div class="team-member-card circular-card">
+                        <div class="team-member-photo">
+                            <img src="image/Алан.png" alt="Алан Бешев">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Алан Бешев</h3>
+                            <p class="team-member-role">Cетевой инженер</p>
+                            <p class="team-member-desc">Проектирует и настраивает сетевую инфраструктуру, гарантируя максимальную надежность и безопасность.</p>
+                            <div class="team-member-tags">
+                                <span class="tag">Архитектура</span>
+                                <span class="tag">Безопасность</span>
+                                <span class="tag">Настройка</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 16. Алинур Бейшенбеков -->
+                    <div class="team-member-card circular-card">
+                        <div class="team-member-photo">
+                            <img src="image/Алинур.png" alt="Алинур Бейшенбеков">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Алинур Бейшенбеков</h3>
+                            <p class="team-member-role">Графический дизайн</p>
+                            <p class="team-member-desc">Создает визуальные концепции и проектирует удобные премиальные пользовательские интерфейсы.</p>
+                            <div class="team-member-tags">
+                                <span class="tag">Графика</span>
+                                <span class="tag">Front-end</span>
+                                <span class="tag">UI/UX</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 13. Нерсес Дапагян -->
+                    <div class="team-member-card circular-card">
+                        <div class="team-member-photo">
+                            <img src="image/Нерсес.png" alt="Нерсес Дапагян">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Нерсес Дапагян</h3>
+                            <p class="team-member-role">Проджект-менеджер</p>
+                            <p class="team-member-desc">Организует процессы разработки, контролирует сроки и качество выполнения проектов.</p>
+                            <div class="team-member-tags">
+                                <span class="tag">Проекты</span>
+                                <span class="tag">Команда</span>
+                                <span class="tag">Agile</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 14. Азамат Султан -->
+                    <div class="team-member-card circular-card">
+                        <div class="team-member-photo">
+                            <img src="image/Азамат.png" alt="Азамат Султан">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Азамат Султан</h3>
+                            <p class="team-member-role">Менеджер по коммуникациям</p>
+                            <p class="team-member-desc">Координирует внешние связи и формирует имидж компании в медиа и партнёрской среде.</p>
+                            <div class="team-member-tags">
+                                <span class="tag">PR</span>
+                                <span class="tag">Медиа</span>
+                                <span class="tag">Брендинг</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 15. Иван Шишкин -->
+                    <div class="team-member-card circular-card">
+                        <div class="team-member-photo">
+                            <img src="image/иван.png" alt="Иван Шишкин">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Иван Шишкин</h3>
+                            <p class="team-member-role">Креативный директор</p>
+                            <p class="team-member-desc">Разрабатывает визуальные концепции и креативные стратегии для проектов ASystem.</p>
+                            <div class="team-member-tags">
+                                <span class="tag">Креатив</span>
+                                <span class="tag">Брендинг</span>
+                                <span class="tag">Дизайн</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Асель Кадырова -->
+                    <div class="team-member-card circular-card">
+                        <div class="team-member-photo">
+                            <img src="image/Асель.png" alt="Асель Кадырова">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Асель Кадырова</h3>
+                            <p class="team-member-role">Главный бухгалтер</p>
+                            <p class="team-member-desc">Контролирует финансовые потоки и обеспечивает прозрачность отчётности компании.</p>
+                            <div class="team-member-tags">
+                                <span class="tag">Финансы</span>
+                                <span class="tag">Отчётность</span>
+                                <span class="tag">Контроль</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </section>
+
+        <section id="process" aria-label="Process">
+            <div class="container">
+                <h2 class="section-title">Как мы работаем</h2>
+                <p class="section-subtitle">Прозрачный процесс от идеи до результата</p>
+                
+                <div class="scroll-stack-scroller">
+                    <div class="scroll-stack-inner">
+                        
+                        <div class="scroll-stack-card card-1">
+                            <div class="process-number">01</div>
+                            <h3>Анализ и консультация</h3>
+                            <p>Изучаем ваш бизнес, определяем узкие места и возможности для автоматизации. Бесплатная консультация и аудит текущих процессов.</p>
+                            <div class="process-icon" style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;"><svg fill="currentColor" width="48" height="48" id="bold" enable-background="new 0 0 24 24" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m12 3.457c-.414 0-.75-.336-.75-.75v-1.957c0-.414.336-.75.75-.75s.75.336.75.75v1.957c0 .414-.336.75-.75.75z"/><path d="m18.571 6.179c-.192 0-.384-.073-.53-.22-.293-.293-.293-.768 0-1.061l1.384-1.384c.293-.293.768-.293 1.061 0s.293.768 0 1.061l-1.384 1.384c-.147.146-.339.22-.531.22z"/><path d="m23.25 12.75h-1.957c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h1.957c.414 0 .75.336.75.75s-.336.75-.75.75z"/><path d="m19.955 20.705c-.192 0-.384-.073-.53-.22l-1.384-1.384c-.293-.293-.293-.768 0-1.061s.768-.293 1.061 0l1.384 1.384c.293.293.293.768 0 1.061-.147.147-.339.22-.531.22z"/><path d="m4.045 20.705c-.192 0-.384-.073-.53-.22-.293-.293-.293-.768 0-1.061l1.384-1.384c.293-.293.768-.293 1.061 0s.293.768 0 1.061l-1.384 1.384c-.147.147-.339.22-.531.22z"/><path d="m2.707 12.75h-1.957c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h1.957c.414 0 .75.336.75.75s-.336.75-.75.75z"/><path d="m5.429 6.179c-.192 0-.384-.073-.53-.22l-1.384-1.384c-.293-.293-.293-.768 0-1.061s.768-.293 1.061 0l1.384 1.384c.293.293.293.768 0 1.061-.148.146-.339.22-.531.22z"/><path d="m15 21v1.25c0 .96-.79 1.75-1.75 1.75h-2.5c-.84 0-1.75-.64-1.75-2.04v-.96z"/><path d="m16.41 6.56c-1.64-1.33-3.8-1.85-5.91-1.4-2.65.55-4.8 2.71-5.35 5.36-.56 2.72.46 5.42 2.64 7.07.59.44 1 1.12 1.14 1.91v.01c.02-.01.05-.01.07-.01h6c.02 0 .03 0 .05.01v-.01c.14-.76.59-1.46 1.28-2 1.69-1.34 2.67-3.34 2.67-5.5 0-2.12-.94-4.1-2.59-5.44zm-.66 5.94c-.41 0-.75-.34-.75-.75 0-1.52-1.23-2.75-2.75-2.75-.41 0-.75-.34-.75-.75s.34-.75.75-.75c2.34 0 4.25 1.91 4.25 4.25 0 .41-.34.75-.75.75z"/><path d="m8.93 19.5h.07c-.02 0-.05 0-.07.01z"/><path d="m15.05 19.5v.01c-.02-.01-.03-.01-.05-.01z"/></svg></div></div>
+
+                        <div class="scroll-stack-card card-2">
+                            <div class="process-number">02</div>
+                            <h3>Разработка стратегии</h3>
+                            <p>Создаём детальный план внедрения с учётом ваших целей и бюджета. Определяем KPI и метрики успеха проекта.</p>
+                            <div class="process-icon" style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;"><svg fill="currentColor" width="48" height="48" id="Layer_1" enable-background="new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m419.2 287.72c6.24 6.24 10.12 14.88 10.12 24.41 0 9.55-3.88 18.17-10.12 24.43-6.26 6.24-14.88 10.09-24.41 10.09-9.55 0-18.17-3.85-24.43-10.09-6.24-6.26-10.09-14.88-10.09-24.43 0-9.52 3.86-18.17 10.09-24.41 6.26-6.24 14.88-10.12 24.43-10.12 9.53 0 18.15 3.88 24.41 10.12zm92.81 17.15v14.54c0 4.34-2.69 8.05-6.83 9.38l-10.32 3.34c-3.23 1.05-5.53 3.43-6.43 6.69-2.07 7.26-4.96 14.17-8.56 20.64-1.64 2.95-1.7 6.26-.17 9.27l4.93 9.69c1.98 3.85 1.25 8.36-1.81 11.45l-10.29 10.29c-3.06 3.06-7.57 3.77-11.45 1.81l-9.69-4.93c-3-1.56-6.32-1.5-9.27.17-6.46 3.6-13.38 6.49-20.64 8.53-3.26.94-5.64 3.23-6.66 6.46l-3.37 10.32c-1.33 4.14-5.02 6.8-9.38 6.8h-14.54c-4.34 0-8.05-2.67-9.38-6.8l-3.34-10.32c-1.05-3.23-3.43-5.53-6.69-6.46-7.26-2.04-14.17-4.93-20.64-8.53-2.95-1.64-6.26-1.73-9.27-.17l-9.69 4.93c-3.86 1.96-8.36 1.25-11.45-1.81l-10.29-10.29c-3.06-3.09-3.77-7.6-1.81-11.45l4.93-9.69c1.56-3 1.5-6.32-.17-9.27-3.6-6.46-6.49-13.38-8.53-20.64-.94-3.26-3.23-5.64-6.46-6.69l-10.32-3.34c-4.14-1.33-6.8-5.05-6.8-9.38v-14.54c0-4.37 2.66-8.05 6.8-9.38l10.35-3.37c3.2-1.05 5.5-3.4 6.43-6.66 2.07-7.26 4.93-14.17 8.53-20.64 1.67-2.95 1.73-6.26.17-9.27l-4.93-9.69c-1.96-3.88-1.25-8.39 1.81-11.45l10.29-10.29c3.09-3.06 7.6-3.8 11.45-1.81l9.69 4.93c3 1.53 6.32 1.47 9.27-.17 6.46-3.6 13.38-6.49 20.64-8.56 3.26-.91 5.64-3.2 6.69-6.43l3.34-10.32c1.33-4.14 5.05-6.83 9.38-6.83h14.54c4.37 0 8.05 2.69 9.38 6.83l3.37 10.32c1.02 3.23 3.4 5.53 6.66 6.43 7.26 2.07 14.17 4.96 20.64 8.56 2.95 1.64 6.26 1.7 9.27.17l9.69-4.93c3.88-1.98 8.39-1.25 11.45 1.81l10.29 10.29c3.06 3.06 3.8 7.57 1.81 11.45l-4.93 9.69c-1.53 3-1.47 6.32.17 9.27 3.6 6.46 6.49 13.38 8.56 20.64.91 3.26 3.2 5.64 6.43 6.66l10.32 3.37c4.14 1.33 6.83 5.01 6.83 9.38zm-66.19 7.26c0-14.09-5.7-26.84-14.94-36.08s-22-14.97-36.09-14.97c-14.12 0-26.87 5.73-36.11 14.97s-14.94 22-14.94 36.08c0 14.12 5.7 26.87 14.94 36.11s22 14.94 36.11 14.94c14.09 0 26.84-5.7 36.09-14.94 9.24-9.24 14.94-22 14.94-36.11zm-162 109.19h-36.09l-11-30.67h-78.72l-10.97 30.67h-36.09c-4.56 0-8.28 3.69-8.28 8.25s3.71 8.28 8.28 8.28h172.86c4.56 0 8.28-3.71 8.28-8.28.01-4.57-3.7-8.25-8.27-8.25zm-22.39-120.99h-261.44v-200.32c0-14.23 11.65-25.85 25.88-25.85h343.05c14.23 0 25.88 11.62 25.88 25.85v78.38h-7.28c-11.51 0-21.54 7.31-25.09 18.26l-2.3 7c-6.04 1.93-11.91 4.37-17.55 7.29l-6.58-3.35c-10.23-5.22-22.51-3.29-30.64 4.85l-10.29 10.29c-8.14 8.11-10.06 20.38-4.85 30.64l3.34 6.58c-2.89 5.64-5.33 11.51-7.26 17.55l-7.03 2.27c-9.45 3.07-16.2 11.01-17.84 20.56zm-157.47-108.96 54.71-30.56c3.97-2.21 5.41-7.23 3.2-11.2s-7.23-5.41-11.2-3.2l-67.52 37.7c-1.33.74-2.49 1.84-3.29 3.26-2.21 3.97-.77 8.99 3.2 11.2l67.61 37.76c3.97 2.21 8.99.79 11.2-3.2 2.21-3.97.77-8.99-3.2-11.2zm109.39-69.59c-4.45-1.02-8.87 1.76-9.89 6.21l-28.2 123.11c-1.02 4.42 1.76 8.84 6.18 9.86 4.45 1.02 8.87-1.76 9.89-6.21l28.2-123.08c1.02-4.45-1.76-8.87-6.18-9.89zm30.76 114.55 67.61-37.76c3.97-2.21 5.41-7.23 3.2-11.2-.79-1.42-1.96-2.52-3.29-3.26l-67.52-37.7c-3.97-2.21-8.99-.77-11.2 3.2s-.77 8.99 3.2 11.2l54.71 30.56-54.71 30.56c-3.97 2.21-5.41 7.23-3.2 11.2 2.21 3.99 7.23 5.41 11.2 3.2zm35.18 108.17c-10.94-3.54-18.23-13.58-18.23-25.09v-2.55h-261.07v31.41c0 14.2 11.65 25.85 25.88 25.85h262.97c.4-1.08.85-2.15 1.39-3.2l3.34-6.58c-2.89-5.64-5.33-11.51-7.29-17.55z"/></svg></div></div>
+
+                        <div class="scroll-stack-card card-3">
+                            <div class="process-number">03</div>
+                            <h3>Разработка и тестирование</h3>
+                            <p>Создаём решение с регулярными демонстрациями прогресса. Проводим тестирование на каждом этапе разработки.</p>
+                            <div class="process-icon" style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;"><?xml version="1.0"?>
+<svg fill="currentColor" width="48" height="48" xmlns="http://www.w3.org/2000/svg" id="Solid" viewBox="0 0 64 64"><path d="M59.25.25H4.75a3.5,3.5,0,0,0,0,7h54.5a3.5,3.5,0,0,0,0-7Z"/><path d="M59,46.25H57.75V10.75H6.25v35.5H5a1.75,1.75,0,0,0,0,3.5H30.25v3.823a5.25,5.25,0,1,0,3.5,0V49.75H59a1.75,1.75,0,0,0,0-3.5Zm-27,14a1.75,1.75,0,1,1,1.75-1.75A1.752,1.752,0,0,1,32,60.25Zm-17-46H33a1.75,1.75,0,0,1,0,3.5H15a1.75,1.75,0,0,1,0-3.5Zm0,7H33a1.75,1.75,0,0,1,0,3.5H15a1.75,1.75,0,0,1,0-3.5ZM13.25,30A1.751,1.751,0,0,1,15,28.25H25a1.75,1.75,0,0,1,0,3.5H15A1.751,1.751,0,0,1,13.25,30Zm37.5,5a1.75,1.75,0,0,1-3.5,0V33.225l-9.013,9.012a1.748,1.748,0,0,1-2.581-.117l-3.864-4.637-5.653,4.846a1.75,1.75,0,1,1-2.278-2.658l7-6a1.75,1.75,0,0,1,2.483.209l3.774,4.528,7.657-7.658H43a1.75,1.75,0,0,1,0-3.5h6A1.751,1.751,0,0,1,50.75,29Z"/></svg></div></div>
+
+                        <div class="scroll-stack-card card-4">
+                            <div class="process-number">04</div>
+                            <h3>Внедрение и обучение</h3>
+                            <p>Плавный запуск системы, обучение команды и передача документации. Поддержка на всех этапах внедрения.</p>
+                            <div class="process-icon" style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;"><svg fill="currentColor" width="48" height="48" id="Layer_1" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><g><path d="m477.6 38.3c-.4-1.8-1.8-3.2-3.5-3.7-58.6-14.3-193.9 36.7-267.2 110-13.1 13-25 27.1-35.6 42.1-22.6-2-45.2-.3-64.5 8.1-54.4 23.9-70.2 86.4-74.7 113.2-.9 5.2 2.6 10.2 7.9 11.1.9.1 1.8.2 2.7.1l87.3-9.6c.1 6.6.5 13.2 1.2 19.7.4 4.5 2.5 8.8 5.7 12l33.8 33.7c3.2 3.2 7.5 5.3 12 5.7 6.5.7 13 1.1 19.6 1.2l-9.6 87.2c-.6 5.3 3.3 10.1 8.6 10.6.9.1 1.8.1 2.6-.1 26.8-4.3 89.4-20.1 113.2-74.5 8.4-19.3 10.1-41.8 8.2-64.3 15.1-10.6 29.2-22.6 42.2-35.6 73.5-73.1 124.2-205.4 110.1-266.9zm-115.7 179.6c-18.7 18.7-49.1 18.8-67.8 0-18.8-18.7-18.8-49.1 0-67.9 18.7-18.8 49.1-18.8 67.9 0 18.7 18.8 18.7 49.2-.1 67.9z"/><path d="m168.4 399.4c-5.5 5.5-14.3 7.6-24.9 9.5-23.8 4-44.8-16.5-40.5-40.5 1.6-9.1 6.5-21.9 9.5-24.9 1.7-1.7 1.8-4.5.1-6.2-1-1-2.3-1.5-3.7-1.3-13.3 1.6-25.7 7.7-35.1 17.1-23.6 23.6-25.8 110.9-25.8 110.9s87.4-2.2 110.9-25.8c9.5-9.5 15.5-21.8 17.1-35.2.4-4.1-4.7-6.6-7.6-3.6z"/></g></svg></div></div>
+
+                        <div class="scroll-stack-card card-5">
+                            <div class="process-number">05</div>
+                            <h3>Поддержка и развитие</h3>
+                            <p>Постоянная техподдержка, мониторинг показателей и развитие системы по мере роста вашего бизнеса.</p>
+                            <div class="process-icon" style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;"><svg fill="currentColor" width="48" height="48" id="Layer_1" height="512" viewBox="0 0 90 90" width="512" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill-rule="evenodd"><path id="path2" d="m46.024162 12.131187c-6.396-.213-12.858 1.532-18.437 5.256-6.266 4.187-10.645 10.37-12.662 17.282-.557-.068-1.224-.038-2.016.186-2.9570004.839-5.1810004 3.262-6.1810004 5.396-1.297 2.781-1.844 6.459-1.267 10.256.573 3.785 2.172 6.905 4.1720001 8.842 2.0060003 1.938 4.2710003 2.568 6.5210003 2.095 3.35-.715 5.011-1.25 4.542-4.371l-2.271-15.129c.458-8.188 4.697-15.896 11.787-20.636 9.49-6.339 21.932-5.933 30.984 1.016 6.297 4.828 9.953 12.062 10.375 19.656l-1.588 10.583c-3.542 9.693-12.323 16.407-22.484 17.36h-6.766c-1.746 0-3.152 1.406-3.152 3.15v1.662c0 1.745 1.406 3.151 3.152 3.151h8.531c1.745 0 3.145-1.406 3.145-3.151v-.869c7.662-1.87 14.35-6.579 18.705-13.146l2.733.725c2.224.577 4.516-.158 6.521-2.095 2-1.938 3.598-5.057 4.172-8.842.579-3.797.016-7.469-1.266-10.256-1.287-2.787-3.204-4.557-5.417-5.192-.927-.267-1.933-.365-2.796-.391-1.824-6.25-5.579-11.934-10.991-16.084-5.321-4.083-11.65-6.244-18.046-6.454z"/><path id="path4" d="m56.009162 39.349187c2.255 0 4.083 1.828 4.088 4.089-.005 2.255-1.833 4.088-4.088 4.088-2.261 0-4.094-1.833-4.094-4.088 0-2.26 1.834-4.089 4.094-4.089zm-11.01 0c2.26 0 4.088 1.828 4.088 4.089 0 2.255-1.828 4.088-4.088 4.088-2.262 0-4.09-1.833-4.09-4.088 0-2.26 1.828-4.089 4.09-4.089zm-11.006 0c2.255 0 4.088 1.828 4.088 4.089 0 2.255-1.833 4.088-4.088 4.088-2.26 0-4.089-1.833-4.089-4.088 0-2.26 1.829-4.089 4.089-4.089zm11.006-17.562c-11.99 0-21.652 9.344-21.652 21.651 0 5.911 2.235 11.135 5.876 14.968l-1.292 5.792c-.426 1.906.896 3.188 2.609 2.234l5.656-3.155c2.688 1.167 5.661 1.812 8.803 1.812 11.994 0 21.65-9.338 21.65-21.651 0-12.307-9.656-21.651-21.65-21.651z"/></g></svg></div></div>
+                        
+                        <!-- Spacer so the last pin can release cleanly -->
+                        <div class="scroll-stack-end"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" aria-label="Contact">
+            <div class="container" style="max-width: 1400px; padding: 0 40px;">
+                <div class="contact-header" style="text-align: center;">
+                    <h2 class="section-title">Давайте обсудим ваш проект</h2>
+                    <p class="contact-subtitle">Оставьте заявку, и мы ответим в течение дня</p>
+                </div>
+
+                <div class="card-grid bento-section" id="bentoGrid">
+                    
+                    <!-- Top Card: All Benefits Combined (Spans 100%) -->
+                    <div class="magic-bento-card magic-bento-card--border-glow particle-container" style="padding: 2em 2.5em 3em; grid-column: 1 / -1; min-height: auto; justify-content: center;">
+                        <div class="magic-bento-card__content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; align-items: start;">
+                            <div class="benefit-item" style="display: flex; flex-direction: column;">
+                                <div class="benefit-icon svg-icon-mask" style="margin-bottom: 0.8rem; width: 26px; height: 26px; -webkit-mask-image: url('image/бесплатная%20консультация.svg'); mask-image: url('image/бесплатная%20консультация.svg');"></div>
+                                <h2 class="magic-bento-card__title" style="font-size: 18px; line-height: 1.25; margin-bottom: 8px; min-height: 2.5em;">Бесплатная консультация</h2>
+                                <p class="magic-bento-card__description" style="font-size: 15px; opacity: 0.8; line-height: 1.5;">Обсудим ваши задачи и предложим решение.</p>
+                            </div>
+                            <div class="benefit-item" style="display: flex; flex-direction: column;">
+                                <div class="benefit-icon svg-icon-mask" style="margin-bottom: 0.8rem; width: 30px; height: 30px; -webkit-mask-image: url('image/быстрый%20расчет.svg'); mask-image: url('image/быстрый%20расчет.svg');"></div>
+                                <h2 class="magic-bento-card__title" style="font-size: 18px; line-height: 1.25; margin-bottom: 8px; min-height: 2.5em;">Быстрый расчёт</h2>
+                                <p class="magic-bento-card__description" style="font-size: 15px; opacity: 0.8; line-height: 1.5;">Коммерческое предложение за 24 часа.</p>
+                            </div>
+                            <div class="benefit-item" style="display: flex; flex-direction: column;">
+                                <div class="benefit-icon svg-icon-mask" style="margin-bottom: 0.8rem; width: 26px; height: 26px; -webkit-mask-image: url('image/без%20агрессивынх%20продаж.svg'); mask-image: url('image/без%20агрессивынх%20продаж.svg');"></div>
+                                <h2 class="magic-bento-card__title" style="font-size: 18px; line-height: 1.25; margin-bottom: 8px; min-height: 2.5em;">Без агрессивных продаж</h2>
+                                <p class="magic-bento-card__description" style="font-size: 15px; opacity: 0.8; line-height: 1.5;">Только экспертные рекомендации.</p>
+                            </div>
+                            <div class="benefit-item" style="display: flex; flex-direction: column;">
+                                <div class="benefit-icon svg-icon-mask" style="margin-bottom: 0.8rem; width: 26px; height: 26px; -webkit-mask-image: url('image/гарантия.svg'); mask-image: url('image/гарантия.svg');"></div>
+                                <h2 class="magic-bento-card__title" style="font-size: 18px; line-height: 1.25; margin-bottom: 8px; min-height: 2.5em;">Гарантия SLA</h2>
+                                <p class="magic-bento-card__description" style="font-size: 15px; opacity: 0.8; line-height: 1.5;">Бесперебойная работа продукта 24/7.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Contact Form (50%) -->
+                    <div class="magic-bento-card magic-bento-card--border-glow particle-container" style="padding: 2.5em;">
+                        <div class="magic-bento-card__header">
+                            <div class="magic-bento-card__label">Заявка на проект</div>
+                        </div>
+                        <div class="magic-bento-card__content" style="height: 100%; justify-content: flex-start; margin-top: 1.5em;">
+                            <form class="contact-form" id="contactForm" style="height: 100%; display: flex; flex-direction: column; justify-content: center;">
+                                <div class="form-group" style="margin-bottom: 15px;">
+                                    <label for="name">Ваше имя *</label>
+                                    <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 15px;">
+                                    <label for="phone">Телефон *</label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="+996 (___) ___-___">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 15px;">
+                                    <label for="service">Интересующая услуга</label>
+                                    <select id="service" name="service">
+                                        <option value="">Выберите услугу</option>
+                                        <option value="ai-assistant">AI-ассистенты</option>
+                                        <option value="web-development">Веб-разработка</option>
+                                        <option value="crm">CRM и интеграции</option>
+                                        <option value="design">AI-дизайн и брендинг</option>
+                                        <option value="other">Другое</option>
+                                    </select>
+                                </div>
+                                <div class="form-group" style="margin-bottom: 15px;">
+                                    <label for="message">О проекте (необязательно)</label>
+                                    <textarea id="message" name="message" rows="2" placeholder="Опишите вашу задачу..."></textarea>
+                                </div>
+                                <button type="submit" class="form-submit-btn" style="margin-top: 10px;">
+                                    <span>Отправить</span>
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Contact Links & Location (50%) -->
+                    <div class="magic-bento-card magic-bento-card--border-glow particle-container" style="padding: 2.5em;">
+                        <div class="magic-bento-card__header" style="margin-bottom: 1.5em;">
+                            <div class="magic-bento-card__label" style="opacity: 0.5;">Связаться напрямую</div>
+                        </div>
+                        <div class="magic-bento-card__content contact-details" style="height: 100%; display: flex; flex-direction: column; justify-content: center;">
+                            <div class="contact-detail-item" style="margin-bottom: 3.5em; align-items: flex-start; gap: 20px;">
+                                <span class="detail-icon svg-icon-mask" style="width: 26px; height: 26px; filter: drop-shadow(0 0 10px var(--c-primary)); -webkit-mask-image: url('image/номер%20телефона.svg'); mask-image: url('image/номер%20телефона.svg');"></span>
+                                <div>
+                                    <p class="detail-label" style="font-size: 14px; opacity: 0.6; margin-bottom: 8px;">WhatsApp / Telegram / Звонки</p>
+                                    <a href="tel:+996772671924" style="font-size: clamp(24px, 3vw, 36px); line-height: 1.1; font-weight: 700; font-family: 'Wadik'; letter-spacing: -0.02em; transition: all 0.3s;">+996 772 67 19 24</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-detail-item" style="margin-bottom: 3.5em; align-items: flex-start; gap: 20px;">
+                                <span class="detail-icon svg-icon-mask" style="width: 26px; height: 26px; -webkit-mask-image: url('image/почта.svg'); mask-image: url('image/почта.svg');"></span>
+                                <div>
+                                    <p class="detail-label" style="font-size: 14px; opacity: 0.6; margin-bottom: 8px;">Консультация и коммерческое предложение</p>
+                                    <a href="mailto:asyljan@gmail.com" style="font-size: clamp(20px, 2vw, 28px); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--stroke-mid);">asyljan@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-detail-item" style="margin-bottom: auto; align-items: flex-start; gap: 20px;">
+                                <span class="detail-icon svg-icon-mask" style="width: 30px; height: 30px; -webkit-mask-image: url('image/адрес.svg'); mask-image: url('image/адрес.svg');"></span>
+                                <div>
+                                    <p class="detail-label" style="font-size: 14px; opacity: 0.6; margin-bottom: 8px;">Адрес нашего офиса</p>
+                                    <p style="font-size: 18px; line-height: 1.5; font-weight: 500;">Кыргызская Республика, г. Бишкек,<br>ул. Суюмбаева 123/1</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Internal Social Links -->
+                            <div style="display: flex; gap: 20px; border-top: 1px solid var(--stroke-soft); padding-top: 2em; margin-top: 3em;">
+                                <a href="https://www.instagram.com/asylbek_aitmatov?igsh=dThyZHBwMm51Z2Q=" target="_blank" class="social-link" style="opacity: 0.8; transition: transform 0.2s, opacity 0.2s;" aria-label="Instagram" onmouseover="this.style.transform='scale(1.1)'; this.style.opacity='1'" onmouseout="this.style.transform='scale(1)'; this.style.opacity='0.8'">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C14.717 2 15.056 2.01 16.122 2.06C17.187 2.11 17.912 2.277 18.55 2.525C19.21 2.779 19.766 3.123 20.322 3.678C20.8305 4.1779 21.224 4.78259 21.475 5.45C21.722 6.087 21.89 6.813 21.94 7.878C21.987 8.944 22 9.283 22 12C22 14.717 21.99 15.056 21.94 16.122C21.89 17.187 21.722 17.912 21.475 18.55C21.2247 19.2178 20.8311 19.8226 20.322 20.322C19.822 20.8303 19.2173 21.2238 18.55 21.475C17.913 21.722 17.187 21.89 16.122 21.94C15.056 21.987 14.717 22 12 22C9.283 22 8.944 21.99 7.878 21.94C6.813 21.89 6.088 21.722 5.45 21.475C4.78233 21.2245 4.17753 20.8309 3.678 20.322C3.16941 19.8222 2.77593 19.2175 2.525 18.55C2.277 17.913 2.11 17.187 2.06 16.122C2.013 15.056 2 14.717 2 12C2 9.283 2.01 8.944 2.06 7.878C2.11 6.812 2.277 6.088 2.525 5.45C2.77524 4.78218 3.1688 4.17732 3.678 3.678C4.17767 3.16923 4.78243 2.77573 5.45 2.525C6.088 2.277 6.812 2.11 7.878 2.06C8.944 2.013 9.283 2 12 2ZM12 7C10.6739 7 9.40215 7.52678 8.46447 8.46447C7.52678 9.40215 7 10.6739 7 12C7 13.3261 7.52678 14.5979 8.46447 15.5355C9.40215 16.4732 10.6739 17 12 17C13.3261 17 14.5979 16.4732 15.5355 15.5355C16.4732 14.5979 17 13.3261 17 12C17 10.6739 16.4732 9.40215 15.5355 8.46447C14.5979 7.52678 13.3261 7 12 7ZM18.5 6.75C18.5 6.41848 18.3683 6.10054 18.1339 5.86612C17.8995 5.6317 17.5815 5.5 17.25 5.5C16.9185 5.5 16.6005 5.6317 16.3661 5.86612C16.1317 6.10054 16 6.41848 16 6.75C16 7.08152 16.1317 7.39946 16.3661 7.63388C16.6005 7.8683 16.9185 8 17.25 8C17.5815 8 17.8995 7.8683 18.1339 7.63388C18.3683 7.39946 18.5 7.08152 18.5 6.75ZM12 9C12.7956 9 13.5587 9.31607 14.1213 9.87868C14.6839 10.4413 15 11.2044 15 12C15 12.7956 14.6839 13.5587 14.1213 14.1213C13.5587 14.6839 12.7956 15 12 15C11.2044 15 10.4413 14.6839 9.87868 14.1213C9.31607 13.5587 9 12.7956 9 12C9 11.2044 9.31607 10.4413 9.87868 9.87868C10.4413 9.31607 11.2044 9 12 9Z"/></svg>
+                                </a>
+                                <a href="https://t.me/asylbek_aitmatov" target="_blank" class="social-link" style="opacity: 0.8; transition: transform 0.2s, opacity 0.2s;" aria-label="Telegram" onmouseover="this.style.transform='scale(1.1)'; this.style.opacity='1'" onmouseout="this.style.transform='scale(1)'; this.style.opacity='0.8'">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM16.64 8.8C16.49 10.38 15.84 14.22 15.51 15.99C15.37 16.74 15.09 16.99 14.83 17.02C14.25 17.07 13.81 16.64 13.25 16.27C12.37 15.69 11.87 15.33 11.02 14.77C10.03 14.12 10.67 13.76 11.24 13.18C11.39 13.03 13.95 10.7 14 10.49C14.0069 10.4582 14.006 10.4252 13.9973 10.3938C13.9886 10.3624 13.9724 10.3337 13.95 10.31C13.89 10.26 13.81 10.28 13.74 10.29C13.65 10.31 12.25 11.24 9.52 13.08C9.12 13.35 8.76 13.49 8.44 13.48C8.08 13.47 7.4 13.28 6.89 13.11C6.26 12.91 5.77 12.8 5.81 12.45C5.83 12.27 6.08 12.09 6.55 11.9C9.47 10.63 11.41 9.79 12.38 9.39C15.16 8.23 15.73 8.03 16.11 8.03C16.19 8.03 16.38 8.05 16.5 8.15C16.6 8.23 16.63 8.34 16.64 8.42C16.63 8.48 16.65 8.66 16.64 8.8Z"/></svg>
+                                </a>
+                                <a href="https://wa.me/996772671924" target="_blank" class="social-link" style="opacity: 0.8; transition: transform 0.2s, opacity 0.2s;" aria-label="WhatsApp" onmouseover="this.style.transform='scale(1.1)'; this.style.opacity='1'" onmouseout="this.style.transform='scale(1)'; this.style.opacity='0.8'">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67ZM8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7 8.5 7 9.71C7 10.93 7.89 12.1 8 12.27C8.14 12.44 9.76 14.94 12.25 16C12.84 16.27 13.3 16.42 13.66 16.53C14.25 16.72 14.79 16.69 15.22 16.63C15.7 16.56 16.68 16.03 16.89 15.45C17.1 14.87 17.1 14.38 17.04 14.27C16.97 14.17 16.81 14.11 16.56 14C16.31 13.86 15.09 13.26 14.87 13.18C14.64 13.1 14.5 13.06 14.31 13.3C14.15 13.55 13.67 14.11 13.53 14.27C13.38 14.44 13.24 14.46 13 14.34C12.74 14.21 11.94 13.95 11 13.11C10.26 12.45 9.77 11.64 9.62 11.39C9.5 11.15 9.61 11 9.73 10.89C9.84 10.78 10 10.6 10.1 10.45C10.23 10.31 10.27 10.2 10.35 10.04C10.43 9.87 10.39 9.73 10.33 9.61C10.27 9.5 9.77 8.26 9.56 7.77C9.36 7.29 9.16 7.35 9 7.34C8.86 7.34 8.7 7.33 8.53 7.33Z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img src="image/asystem.ai wadik.png" alt="Asystem">
+                        </div>
+                        <p class="footer-tagline">Автоматизируем бизнес-процессы для роста вашей компании</p>
+                        <div class="footer-social">
+                            <a href="https://www.instagram.com/asylbek_aitmatov?igsh=dThyZHBwMm51Z2Q=" target="_blank" class="social-link" aria-label="Instagram">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 2C14.717 2 15.056 2.01 16.122 2.06C17.187 2.11 17.912 2.277 18.55 2.525C19.21 2.779 19.766 3.123 20.322 3.678C20.8305 4.1779 21.224 4.78259 21.475 5.45C21.722 6.087 21.89 6.813 21.94 7.878C21.987 8.944 22 9.283 22 12C22 14.717 21.99 15.056 21.94 16.122C21.89 17.187 21.722 17.912 21.475 18.55C21.2247 19.2178 20.8311 19.8226 20.322 20.322C19.822 20.8303 19.2173 21.2238 18.55 21.475C17.913 21.722 17.187 21.89 16.122 21.94C15.056 21.987 14.717 22 12 22C9.283 22 8.944 21.99 7.878 21.94C6.813 21.89 6.088 21.722 5.45 21.475C4.78233 21.2245 4.17753 20.8309 3.678 20.322C3.16941 19.8222 2.77593 19.2175 2.525 18.55C2.277 17.913 2.11 17.187 2.06 16.122C2.013 15.056 2 14.717 2 12C2 9.283 2.01 8.944 2.06 7.878C2.11 6.812 2.277 6.088 2.525 5.45C2.77524 4.78218 3.1688 4.17732 3.678 3.678C4.17767 3.16923 4.78243 2.77573 5.45 2.525C6.088 2.277 6.812 2.11 7.878 2.06C8.944 2.013 9.283 2 12 2ZM12 7C10.6739 7 9.40215 7.52678 8.46447 8.46447C7.52678 9.40215 7 10.6739 7 12C7 13.3261 7.52678 14.5979 8.46447 15.5355C9.40215 16.4732 10.6739 17 12 17C13.3261 17 14.5979 16.4732 15.5355 15.5355C16.4732 14.5979 17 13.3261 17 12C17 10.6739 16.4732 9.40215 15.5355 8.46447C14.5979 7.52678 13.3261 7 12 7ZM18.5 6.75C18.5 6.41848 18.3683 6.10054 18.1339 5.86612C17.8995 5.6317 17.5815 5.5 17.25 5.5C16.9185 5.5 16.6005 5.6317 16.3661 5.86612C16.1317 6.10054 16 6.41848 16 6.75C16 7.08152 16.1317 7.39946 16.3661 7.63388C16.6005 7.8683 16.9185 8 17.25 8C17.5815 8 17.8995 7.8683 18.1339 7.63388C18.3683 7.39946 18.5 7.08152 18.5 6.75ZM12 9C12.7956 9 13.5587 9.31607 14.1213 9.87868C14.6839 10.4413 15 11.2044 15 12C15 12.7956 14.6839 13.5587 14.1213 14.1213C13.5587 14.6839 12.7956 15 12 15C11.2044 15 10.4413 14.6839 9.87868 14.1213C9.31607 13.5587 9 12.7956 9 12C9 11.2044 9.31607 10.4413 9.87868 9.87868C10.4413 9.31607 11.2044 9 12 9Z" fill="currentColor"/>
+                                </svg>
+                            </a>
+                            <a href="https://t.me/asylbek_aitmatov" target="_blank" class="social-link" aria-label="Telegram">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM16.64 8.8C16.49 10.38 15.84 14.22 15.51 15.99C15.37 16.74 15.09 16.99 14.83 17.02C14.25 17.07 13.81 16.64 13.25 16.27C12.37 15.69 11.87 15.33 11.02 14.77C10.03 14.12 10.67 13.76 11.24 13.18C11.39 13.03 13.95 10.7 14 10.49C14.0069 10.4582 14.006 10.4252 13.9973 10.3938C13.9886 10.3624 13.9724 10.3337 13.95 10.31C13.89 10.26 13.81 10.28 13.74 10.29C13.65 10.31 12.25 11.24 9.52 13.08C9.12 13.35 8.76 13.49 8.44 13.48C8.08 13.47 7.4 13.28 6.89 13.11C6.26 12.91 5.77 12.8 5.81 12.45C5.83 12.27 6.08 12.09 6.55 11.9C9.47 10.63 11.41 9.79 12.38 9.39C15.16 8.23 15.73 8.03 16.11 8.03C16.19 8.03 16.38 8.05 16.5 8.15C16.6 8.23 16.63 8.34 16.64 8.42C16.63 8.48 16.65 8.66 16.64 8.8Z" fill="currentColor"/>
+                                </svg>
+                            </a>
+                            <a href="https://wa.me/996772671924" target="_blank" class="social-link" aria-label="WhatsApp">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67ZM8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7 8.5 7 9.71C7 10.93 7.89 12.1 8 12.27C8.14 12.44 9.76 14.94 12.25 16C12.84 16.27 13.3 16.42 13.66 16.53C14.25 16.72 14.79 16.69 15.22 16.63C15.7 16.56 16.68 16.03 16.89 15.45C17.1 14.87 17.1 14.38 17.04 14.27C16.97 14.17 16.81 14.11 16.56 14C16.31 13.86 15.09 13.26 14.87 13.18C14.64 13.1 14.5 13.06 14.31 13.3C14.15 13.55 13.67 14.11 13.53 14.27C13.38 14.44 13.24 14.46 13 14.34C12.74 14.21 11.94 13.95 11 13.11C10.26 12.45 9.77 11.64 9.62 11.39C9.5 11.15 9.61 11 9.73 10.89C9.84 10.78 10 10.6 10.1 10.45C10.23 10.31 10.27 10.2 10.35 10.04C10.43 9.87 10.39 9.73 10.33 9.61C10.27 9.5 9.77 8.26 9.56 7.77C9.36 7.29 9.16 7.35 9 7.34C8.86 7.34 8.7 7.33 8.53 7.33Z" fill="currentColor"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h4>Услуги</h4>
+                            <ul>
+                                <li><a href="#services">AI-ассистенты</a></li>
+                                <li><a href="#services">Веб-разработка</a></li>
+                                <li><a href="#services">CRM и интеграции</a></li>
+                                <li><a href="#services">AI-дизайн</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-column">
+                            <h4>Компания</h4>
+                            <ul>
+                                <li><a href="#about">О нас</a></li>
+                                <li><a href="#team">Команда</a></li>
+                                <li><a href="#cases">Проекты</a></li>
+                                <li><a href="#process">Как мы работаем</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-column">
+                            <h4>Контакты</h4>
+                            <ul>
+                                <li><a href="mailto:asyljan@gmail.com">asyljan@gmail.com</a></li>
+                                <li><a href="tel:+996772671924">+996 772 67 19 24</a></li>
+                                <li><span>г. Бишкек, ул. Суюмбаева 123/1</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p class="footer-copyright">© 2026 Asystem. Все права защищены.</p>
+                    <div class="footer-legal">
+                        <a href="#">Политика конфиденциальности</a>
+                        <a href="#">Условия использования</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Theme Switcher Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeBtn = document.getElementById('theme-toggle');
+            if(!themeBtn) return;
+            
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            
+            if (currentTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+                themeBtn.innerHTML = '☀️';
+            } else {
+                themeBtn.innerHTML = '🌙';
+            }
+            
+            themeBtn.addEventListener('click', () => {
+                const isDark = document.body.classList.toggle('dark-theme');
+                themeBtn.innerHTML = isDark ? '☀️' : '🌙';
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            });
+        });
+    </script>
+</body>
+</html>

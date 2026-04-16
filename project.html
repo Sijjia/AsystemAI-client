@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проект — Asystem AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Wadik';
+            src: url('fonts/Wadik.woff2') format('woff2'),
+                 url('fonts/Wadik.woff') format('woff'),
+                 url('fonts/Wadik.ttf') format('truetype');
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css?v=104">
+    <link rel="stylesheet" href="projects.css?v=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
+        }
+    }
+    </script>
+    <script src="project-detail.js?v=1" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="/" class="logo-mask" aria-label="Home"></a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/#values">Преимущества</a></li>
+                    <li><a href="/#services">Услуги</a></li>
+                    <li><a href="/projects.html" class="active">Проекты</a></li>
+                    <li><a href="/#team">Команда</a></li>
+                </ul>
+                <div class="header-actions" style="display: flex; gap: 16px; align-items: center;">
+                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme" style="background: transparent; border: none; font-size: 24px; cursor: pointer; color: var(--t-1);">🌙</button>
+                    <a href="/#contact" class="header-cta">Обсудить проект</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="project-detail-hero" id="projectHero">
+            <div class="project-hero-cover" id="projectCover"></div>
+            <div class="project-hero-overlay"></div>
+            <canvas class="project-detail-canvas" id="projectCanvas"></canvas>
+            <div class="container">
+                <a href="/projects.html" class="project-back">← Все проекты</a>
+                <div id="projectHeroContent">
+                    <div class="projects-loading" style="color: rgba(255,255,255,0.5)">Загрузка...</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-blocks" id="projectBlocks">
+            <div class="container" id="projectBlocksContent"></div>
+        </section>
+
+        <section class="project-cta-section">
+            <div class="container">
+                <div class="project-cta-card">
+                    <h3>Хотите такой же проект?</h3>
+                    <p>Расскажите о вашей задаче — мы найдём решение</p>
+                    <a href="/#contact" class="project-cta-btn">Обсудить проект</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-nav" id="projectNav">
+            <div class="container">
+                <div class="project-nav-inner" id="projectNavContent"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img src="image/asystem.ai wadik.png" alt="Asystem">
+                        </div>
+                        <p class="footer-tagline">Автоматизируем бизнес-процессы для роста вашей компании</p>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h4>Услуги</h4>
+                            <ul>
+                                <li><a href="/#services">AI-ассистенты</a></li>
+                                <li><a href="/#services">Веб-разработка</a></li>
+                                <li><a href="/#services">CRM и интеграции</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Компания</h4>
+                            <ul>
+                                <li><a href="/#team">Команда</a></li>
+                                <li><a href="/projects.html">Проекты</a></li>
+                                <li><a href="/#process">Как мы работаем</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Контакты</h4>
+                            <ul>
+                                <li><a href="mailto:asyljan@gmail.com">asyljan@gmail.com</a></li>
+                                <li><a href="tel:+996772671924">+996 772 67 19 24</a></li>
+                                <li><span>г. Бишкек, ул. Суюмбаева 123/1</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="footer-copyright">© 2026 Asystem. Все права защищены.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeBtn = document.getElementById('theme-toggle');
+            if(!themeBtn) return;
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            if (currentTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+                themeBtn.innerHTML = '☀️';
+            } else {
+                themeBtn.innerHTML = '🌙';
+            }
+            themeBtn.addEventListener('click', () => {
+                const isDark = document.body.classList.toggle('dark-theme');
+                themeBtn.innerHTML = isDark ? '☀️' : '🌙';
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            });
+        });
+    </script>
+</body>
+</html>

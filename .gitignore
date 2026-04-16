@@ -1,0 +1,8 @@
+node_modules/
+.DS_Store
+*.pyc
+__pycache__/
+.env
+.claude/
+_bmad/
+_bmad-output/
